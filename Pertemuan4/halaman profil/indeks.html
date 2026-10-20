@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Portofolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Elemen semantik: header -->
+    <header>
+        <h1>Nabil Zidane</h1>
+        <nav>
+            <a href="#tentang">Tentang</a>
+            <a href="#project">Project</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- id: elemen unik, berisi foto profil -->
+    <section id="hero">
+        <img src="image/profile.jpg" alt="Foto profil Nabil Zidane" class="foto-profil">
+        <h2>Mahasiswa Teknik Informatika</h2>
+        <p>Sedang belajar HTML, CSS, dan desain web responsif.</p>
+    </section>
+
+    <main>
+        <section id="tentang">
+            <h2>Tentang Saya</h2>
+            <p>
+                Saya mahasiswa Teknik Informatika yang tertarik pada
+                pengembangan website dan desain antarmuka. Saat ini saya
+                mempelajari dasar-dasar HTML dan CSS.
+            </p>
+        </section>
+
+        <section id="project">
+    <h2>Project Saya</h2>
+
+    <!-- class: dipakai berulang untuk 3 card -->
+    <div class="card-wrapper">
+
+        <div class="card">
+            <h3>Project 1</h3>
+            <p>Halaman profil pribadi sederhana.</p>
+        </div>
+
+        <div class="card">
+            <h3>Project 2</h3>
+            <p>Halaman CV dengan external CSS.</p>
+        </div>
+
+        <div class="card">
+            <h3>Project 3</h3>
+            <p>Landing page responsif.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Kontak: internal link, external link, email link -->
+<section id="kontak">
+    <h2>Kontak</h2>
+
+    <ul class="kontak-list">
+        <li>
+            Email:
+            <a href="mailto:nabilzdn4525144@univpancasila.ac.id">nabilzdn4525144@univpancasila.ac.id</a>
+        </li>
+
+        <li>
+            GitHub:
+            <a href="https://github.com/Biilleh" target="_blank">
+                github.com/Biilleh
+            </a>
+        </li>
+
+        <li>
+            LinkedIn:
+            <a href="https://linkedin.com/in/Nabil-Zidane" target="_blank">
+                linkedin.com/in/nabil-zidane
+            </a>
+        </li>
+    </ul>
+
+    <a href="#hero" class="button">Kembali ke Atas</a>
+</section>
+
+</main>
+
+<!-- Elemen semantik: footer -->
+<footer>
+    <p>&copy; 2024 Nabil Zidane. Semua hak dilindungi.</p>
+</footer>
+    </main>
+
+</body>
+</html>
