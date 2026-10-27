@@ -1,18 +1,21 @@
-# Judul Utama (H1)
-## Sub-judul (H2)
-### Bagian Ketiga (H3)
-#### Bagian Keempat (H4)
+# Tugas2-Profil Universitas Pancasila
 
-*Ini teks miring* atau _Ini teks miring_
-**Ini teks tebal** atau __Ini teks tebal__
-***Ini tebal dan miring***
+## Deskripsi
+Proyek ini merupakan halaman profil statis Universitas Pancasila yang dibuat menggunakan HTML dan CSS. Halaman ini menyajikan informasi kampus, program studi, fakultas, fasilitas, alur pendaftaran, serta kontak dan media sosial.
 
-![Teks Alternatif jika gambar gagal dimuat](../image/logot.webp)
+## Struktur Halaman
+**Beranda:** Judul halaman dan navigasi.
+**Profil:** Informasi Universitas Pancasila beserta gambar logo dan gedung Fakultas Teknik.
+**Program Studi:** Daftar program studi menggunakan unordered list, daftar fakultas menggunakan ordered list, serta fasilitas menggunakan description list.
+**Pendaftaran:** Informasi singkat mengenai langkah pendaftaran mahasiswa.
+**Kontak:** Email, website universitas, website fakultas, YouTube, Instagram, dan tautan kembali ke atas.
 
-# Contoh dengan link internet:
-! [Logo GitHub](https://githubassets.com)
+## Implementasi HTML
+Elemen HTML yang digunakan meliputi heading, paragraf, gambar dengan atribut `alt`, tautan internal, tautan eksternal, dan `mailto`. Tiga jenis list (`ul`, `ol`, dan `dl`) digunakan untuk menyusun informasi secara terstruktur. CSS diterapkan melalui file `css/style.css`.
 
-[Teks yang Bisa Diklik](https://google.com)
+## Kendala dan Solusi
+Kendala yang dihadapi adalah menyusun konten secara terstruktur, menentukan jalur gambar, dan mengatur tautan agar sesuai dengan tujuan. Solusinya adalah menggunakan elemen HTML yang tepat, memastikan nama file dan jalur gambar sesuai, serta membedakan tautan internal, eksternal, dan email.
 
-# Menampilkan URL langsung yang otomatis menjadi link:
-<https://google.com>
+## ss run
+![ss run](../image/ssrun1.png)
+![ss run](../image/ssrun2.png)
