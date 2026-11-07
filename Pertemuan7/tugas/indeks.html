@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pendaftaran Event Mahasiswa</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="registration-card">
+        <div class="form-header">
+          <span class="label"> REGISTRASI EVENT </span>
+          <h1>Form Pendaftaran Event</h1>
+          <p>Silakan lengkapi data pendaftaran di bawah ini.</p>
+        </div>
+
+        <!--
+          Method POST digunakan karena data pendaftaran dikirim melalui body HTTP request.
+        -->
+        <form action="/proses-pendaftaran" method="post" enctype="multipart/form-data">
+          <!-- Nama Lengkap (Validasi 1: required) -->
+          <div class="form-group">
+            <label for="nama"> Nama Lengkap <span class="required">*</span></label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan nama lengkap"
+              required
+            />
+          </div>
+
+          <!-- Email (Validasi 2: required & type=email) -->
+          <div class="form-group">
+            <label for="email"> Email <span class="required">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="nama@email.com"
+              required
+            />
+          </div>
+
+          <!-- Nomor Whatsapp / Telepon (Validasi 3: pattern regex & minlength) -->
+          <div class="form-group">
+            <label for="telepon"> Nomor WhatsApp / Telepon <span class="required">*</span></label>
+            <input
+              type="tel"
+              id="telepon"
+              name="telepon"
+              placeholder="Contoh: 081234567890"
+              pattern="[0-9]{10,13}"
+              minlength="10"
+              maxlength="13"
+              required
+            />
+            <small> Masukkan 10-13 digit angka saja. </small>
+          </div>
+
+          <!-- Kategori Peserta (Radio Button) -->
+          <div class="form-group">
+            <label> Kategori Peserta <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="kategori" value="mahasiswa" required />
+                Mahasiswa Internal
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="kategori" value="umum" />
+                Umum / Eksternal
+              </label>
+            </div>
+          </div>
+
+          <!-- Pilihan Sesi Event (Select Option) -->
+          <div class="form-group">
+            <label for="sesi-event"> Pilih Sesi Event <span class="required">*</span></label>
+            <select id="sesi-event" name="sesi_event" required>
+              <option value="">-- Pilih Sesi Workshop --</option>
+              <option value="web-design">Sesi 1: Fundamental Web Design</option>
+              <option value="ui-ux">Sesi 2: Advanced UI/UX Architecture</option>
+              <option value="frontend">Sesi 3: Modern Front-End Frameworks</option>
+            </select>
+          </div>
+
+          <!-- Motivasi / Catatan Khusus (Textarea) -->
+          <div class="form-group">
+            <label for="alasan"> Alasan Mengikuti Event </span></label>
+            <textarea
+              id="alasan"
+              name="alasan"
+              rows="4"
+              placeholder="Jelaskan motivasi atau harapan Anda mengikuti event ini..."
+              required
+            ></textarea>
+          </div>
+
+          <!-- Upload Bukti Identitas / Pembayaran (File Upload - Validasi 4: accept file type & required) -->
+          <div class="form-group">
+            <label for="bukti"> Upload Kartu Identitas / KTM (PDF/JPG/PNG) <span class="required">*</span></label>
+            <input
+              type="file"
+              id="bukti"
+              name="bukti_identitas"
+              accept=".pdf,.jpg,.jpeg,.png"
+              required
+            />
+            <small> Format yang diperbolehkan: PDF, JPG, JPEG, PNG (Maks 2MB). </small>
+          </div>
+
+          <!-- Persetujuan Syarat & Ketentuan (Checkbox) -->
+          <div class="form-group">
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="setuju" id="setuju" required />
+                Saya menyetujui seluruh syarat & ketentuan event yang berlaku. <span class="required">*</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Button Group -->
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">Daftar Event</button>
+            <button type="reset" class="btn btn-reset">Reset</button>
+            <button type="button" class="btn btn-secondary">Kembali</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
