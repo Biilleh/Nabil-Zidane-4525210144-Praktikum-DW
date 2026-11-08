@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pendaftaran Kegiatan</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="form-card">
+        <header class="form-header">
+          <span class="label-top"> PENDAFTARAN VOLUNTIR </span>
+          <h1>Form Pendaftaran Voluntir Bakti Masyarakat & Gerakan Peduli Lingkungan.</h1>
+          <p>Lengkapi data berikut dengan benar. Field bertanda wajib diisi.</p>
+        </header>
+        <form action="/proses-pendaftaran" method="post">
+          <!-- Nama -->
+          <div class="form-group">
+            <label for="nama"> Nama Lengkap * </label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Contoh: Saipul"
+              minlength="3"
+              maxlength="50"
+              required
+            />
+            <small> Masukkan nama lengkap antara 3-50 karakter </small>
+          </div>
+          <!-- tlp -->
+          <div class="form-group">
+            <label for="tlp"> No. Telp </label>
+            <input
+              type="text"
+              id="tlp"
+              name="tlp"
+              placeholder="Contoh: 081284784241"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              required
+            />
+            <small> tlp harus terdiri dari 10 digit angka. </small>
+          </div>
+          <!-- domisili  -->
+          <div class="form-group">
+            <label for="dmsl"> Domisili </label>
+            <select id="dmsl" name="program_studi" required>
+              <option value="">-- Pilih Domisili --</option>
+              <option value="informatika">Jakarta Timur</option>
+              <option value="mesin">Jakarta Utara</option>
+              <option value="elektro">Bekasi</option>
+              <option value="sipil">Depok</option>
+            </select>
+          </div>
+          <!-- Radio Button -->
+          <fieldset>
+            <legend> Pilihan Divisi *</legend>
+            <div class="option">
+              <input
+                type="radio"
+                id="reguler"
+                name="div_relawn"
+                value="reguler"
+                required
+              />
+              <label for="reguler"> Logistik </label>
+            </div>
+            <div class="option">
+              <input
+                type="radio"
+                id="karyawan"
+                name="div_relawn"
+                value="karyawan"
+              />
+              <label for="karyawan"> Humas </label>
+            </div>
+            <div class="option">
+              <input type="radio" id="umum" name="div_relawn" value="umum" />
+              <label for="umum"> Lapangan </label>
+            </div>
+          </fieldset>
+          <!-- Checkbox -->
+          <fieldset>
+            <legend>Keahlian/Minat</legend>
+            <p class="instruction">Anda dapat memilih lebih dari satu.</p>
+            <div class="option">
+              <input type="checkbox" id="web" name="minat[]" value="web" />
+              <label for="web"> Dokumentasi </label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="ai" name="minat[]" value="ai" />
+              <label for="ai"> Pertolongan Pertama </label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="data" name="minat[]" value="data" />
+              <label for="data"> Mengajar  </label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="cyber" name="minat[]" value="cyber" />
+              <label for="cyber"> Lainnya </label>
+            </div>
+          </fieldset>
+          <!-- Textarea -->
+          <div class="form-group">
+            <label for="alasan"> Motivasi Menjadi Voluntir * </label>
+            <textarea
+              id="alasan"
+              name="alasan"
+              rows="5"
+              minlength="20"
+              maxlength="300"
+              placeholder="Jabarkan sedikit motivasi anda untuk mengikuti kegiatan ini..."
+              required
+            ></textarea>
+            <small> Tuliskan antara 20-300 karakter. </small>
+          </div>
+          <!-- Persetujuan -->
+          <div class="agreement">
+            <input
+              type="checkbox"
+              id="persetujuan"
+              name="persetujuan"
+              value="setuju"
+              required
+            />
+            <label for="persetujuan">
+              Saya menyatakan bahwa data yang diisi sudah benar. *
+            </label>
+          </div>
+          <!-- Tombol -->
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">
+              Kirim Pendaftaran
+            </button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

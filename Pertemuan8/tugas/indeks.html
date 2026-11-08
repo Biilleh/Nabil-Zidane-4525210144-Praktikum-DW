@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pendaftaran kursus</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="form-card">
+        <header class="form-header">
+          <span class="label-top"> PENDAFTARAN KURSUS </span>
+          <h1>Form Pendaftaran Kursus Pelajar Bahasa.</h1>
+          <p>Lengkapi data berikut dengan benar. Field bertanda wajib diisi.</p>
+        </header>
+        <form action="/proses-pendaftaran" method="post">
+          <!-- Nama -->
+          <div class="form-group">
+            <label for="nama"> Nama Lengkap <span class="required">*</span></label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Contoh: Saipul"
+              minlength="3"
+              maxlength="30"
+              required
+            />
+            
+            <small> Masukkan nama lengkap antara 3-30 karakter </small>
+          </div>
+           <!-- umur -->
+          <div class="form-group">
+            <label for="umur"> Umur <span class="required">*</span></label>
+            <input
+              type="number"
+              id="umur"
+              name="umur"
+              placeholder="Contoh: 20"
+              min="8"
+              max="30"
+              required
+            />
+          </div>
+          <!-- tlp -->
+          <div class="form-group">
+            <label for="tlp"> No. Telp (aktif WhatsAPP) <span class="required">*</span></label>
+            <input
+              type="text"
+              id="tlp"
+              name="tlp"
+              placeholder="Contoh: 081284784241"
+              pattern="[0-9]{10-12}"
+              maxlength="12"
+              required
+            />
+            <small> tlp harus terdiri dari 10 digit angka. </small>
+          </div>
+          <div class="form-group">
+            <label for="bhsa"> Kelas <span class="required">*</span></label>
+            <select id="bhsa" name="program_studi" required>
+              <option value="">-- Pilih Kelas --</option>
+              <option value="Indonesia">Bahasa Indonesia</option>
+              <option value="Inggris">Bahasa Inggris</option>
+              <option value="Jepang">Bahasa Jepang</option>
+              <option value="Jerman">Bahasa Jerman</option>
+              <option value="Jerman">Bahasa Arab</option>
+              <option value="Mandarin">Bahasa Tionghoa</option>
+              <option value="Spanyol">Bahasa Spanyol</option>
+              <option value="Prancis">Bahasa Prancis</option>
+            </select>
+          </div>
+          <!-- Radio Button -->
+          <fieldset>
+            <legend> Sistem Kelas / Jadwal <span class="required">*</span></legend>
+            <div class="option">
+              <input
+                type="radio"
+                id="reguler"
+                name="sistem_kelas"
+                value="reguler"
+                required
+              />
+              <label for="reguler"> Reguler (Weekday) </label>
+            </div>
+            <div class="option">
+              <input
+                type="radio"
+                id="intensif"
+                name="sistem_kelas"
+                value="intensif"
+              />
+              <label for="intensif"> Kelas Intensif </label>
+            </div>
+            <div class="option">
+              <input type="radio" id="weekend" name="sistem_kelas" value="weekend" />
+              <label for="weekend"> Kelas Akhir Pekan (Weekend) </label>
+            </div>
+          </fieldset>
+
+          <!-- Checkbox -->
+          <fieldset>
+            <legend>Fokus Tujuan Belajar  <span class="required">*</span></legend>
+            <p class="instruction">Anda dapat memilih lebih dari satu.</p>
+            <div class="option">
+              <input type="checkbox" id="percakapan" name="tujuan[]" value="percakapan" />
+              <label for="percakapan"> Percakapan Sehari-hari (Conversational) </label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="akademik" name="tujuan[]" value="akademik" />
+              <label for="akademik"> Persiapan Ujian / Akademik </label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="bisnis" name="tujuan[]" value="bisnis" />
+              <label for="bisnis"> Bahasa Bisnis & Profesional </label>
+            </div>
+            <div class="option">
+              <input type="checkbox" id="lainnya" name="tujuan[]" value="lainnya" />
+              <label for="lainnya"> Hobi & Budaya </label>
+            </div>
+          </fieldset>
+          <div class="form-group">
+            <label for="fotoKK"> foto Kartu Keluarga </label>
+            <input
+              type="file"
+              id="fotoKK"
+              name="fotoKK"
+              accept=".pdf,.jpg,.jpeg,.png"
+            />
+            <small> Opsional. Dapat berupa PDF atau gambar. </small>
+          </div>
+          <!-- Persetujuan -->
+          <div class="agreement">
+            <input
+              type="checkbox"
+              id="persetujuan"
+              name="persetujuan"
+              value="setuju"
+              required
+            />
+            
+            <label for="persetujuan">
+              Saya menyatakan bahwa data yang diisi sudah benar. <span class="required">*</span>
+            </label>
+          </div>
+          <!-- Tombol -->
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">
+              Kirim Pendaftaran
+            </button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
